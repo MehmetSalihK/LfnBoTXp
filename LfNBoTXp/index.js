@@ -76,7 +76,7 @@ Client.on("message", async (message) => {
 		message.channel.send({embed: xp_embed});
 	}
 
-	if (command == "lfnxp") {
+	if (command == "xplfn") {
 		message.delete (30);
 		var xp = db.get("xp").filter({user: msgauthor}).find("xp").value()
 		var xpfinal = Object.values(xp);
