@@ -11,11 +11,6 @@ var storynumber = db.get("histoires").map("story_value").value();
 
 db.defaults({ histoires: [], xp: []}).write()
 
-Client.on("ready", () => {
-	console.log("online");
-	Client.user.setPresence({ game: { name: `Hello world`, type: 0} });
-});
-
 Client.on("message", async (message) => {
 	if (message.author.bot) return;
 
