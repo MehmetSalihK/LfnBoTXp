@@ -76,7 +76,7 @@ Client.on("message", async (message) => {
 		message.channel.send({embed: xp_embed});
 	}
 
-	if (command == "xplfn") {
+	if (command == "adminxpa") {
 		message.delete (30);
 		var xp = db.get("xp").filter({user: msgauthor}).find("xp").value()
 		var xpfinal = Object.values(xp);
@@ -99,16 +99,16 @@ Client.on("message", async (message) => {
 	console.log(message.author + ` Viewed their profile!`)
 	}
 
-	if (command == "adminxpa") {
+	if (command == "xplfn") {
 		message.delete (30);
 		var xp = db.get("xp").filter({user: msgauthor}).find("xp").value()
 		var xpfinal = Object.values(xp);
 		var xp_embed = new Discord.RichEmbed()
 		const embed = new Discord.RichEmbed()
-		.setColor(0x954D23)
-		.setTitle(`XP de ${message.author.username}`)
-		.setDescription("Voici tout vos xp monsieur !")
-		.addField("XP :", `${xpfinal[1]} xp`)
+		.setColor(0x00ffff)
+		.setTitle(`${message.author.username}`)
+		.addField("XP :", `${xpfinal[1]}`)
+		.setThumbnail(message.author.avatarURL)
 		message.channel.send({embed});
 	}
 	
@@ -121,4 +121,4 @@ function story_random(min, max) {
 	randnum = Math.floor(Math.random() * (max - min +1) + min);
 }
 
-Client.login("NDI5NzQ1ODg4MTUyNTE4Njcx.DcQYkw.KQPqEBDUVpftE91JHmdwvkCanqs");
+Client.login("NDM4MDg1MzYxOTczODU0MjEw.Dgy6pg.RdnGUizuDw4wnzuTuB5hDaFCmQo");
