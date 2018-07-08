@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const Client = new Discord.Client();
-const prefix = "-"
+const prefix = ""
 const low = require("lowdb")
 const FileSync = require("lowdb/adapters/FileSync")
 
@@ -99,7 +99,7 @@ Client.on("message", async (message) => {
 	console.log(message.author + ` Viewed their profile!`)
 	}
 
-	if (command == "xplfn") {
+	if (command == "-xp") {
 		message.delete (30);
 		var xp = db.get("xp").filter({user: msgauthor}).find("xp").value()
 		var xpfinal = Object.values(xp);
@@ -121,4 +121,4 @@ function story_random(min, max) {
 	randnum = Math.floor(Math.random() * (max - min +1) + min);
 }
 
-Client.login("NDM4MDg1MzYxOTczODU0MjEw.Dgy6pg.RdnGUizuDw4wnzuTuB5hDaFCmQo");
+Client.login("NDM4MDg1MzYxOTczODU0MjEw.DiNjWA.aTIOHPPNEk1qCFwhUORrFv6jIEg");
